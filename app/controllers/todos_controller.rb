@@ -10,7 +10,7 @@ class TodosController < ApplicationController
       redirect_to("/")
     else
       flash[:notice] = "エラーが発生しました"
-      redirect_to"/todos/new"
+      render("/todos/new")
     end
   end
 
