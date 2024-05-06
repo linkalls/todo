@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <header>
+    <ul>
+      <li>
+      <%= link_to("新規投稿", "/new") %>
+      <%= link_to("投稿一覧", "/") %>
+      </li>
+    </ul>
+    <p><%= flash[:notice] %></p>
+  </header>
+  <body>
+    <%= yield %>
+  </body>
+</html>
