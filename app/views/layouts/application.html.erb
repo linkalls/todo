@@ -7,8 +7,8 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'application' %> 
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+<%= javascript_include_tag "application" %> 
   </head>
   <header>
     <ul>
@@ -19,6 +19,7 @@
     </ul>
     <p><%= flash[:notice] %></p>
   </header>
+  <%= javascript_importmap_tags %>
   <body>
     <%= yield %>
   </body>

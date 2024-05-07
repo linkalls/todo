@@ -1,6 +1,10 @@
+
+
 <% @tasks.each do |task| %>
   <div class="task">
     <h1 class="task-title"><%= task.title %></h1>
     <p class="task-content"><%= task.content %></p>
+    <%= link_to("編集", "/#{task.id}/edit") %>
+    <%= button_to("削除", "/#{task.id}", method: :delete) %>
   </div>
 <% end %>

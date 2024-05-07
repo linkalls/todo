@@ -1,0 +1,17 @@
+<div style="text-align: center;">
+  <h1 style="color: black;"><%= @task.title %></h1>
+  <%= form_tag("/#{@task.id}/update", method: :patch, authenticity_token: form_authenticity_token) do %>
+  
+    <textarea style="width: 300px; height: 200px;" name="content"><%= @task.content %></textarea>
+          <input type="submit" value="変更完了">
+    <% end  %>
+    <%= button_to("削除", "/#{@task.id}", method: :delete) %>
+</div>
+
+
+
+<!-- このエラーは、RailsがCSRF（Cross-Site Request Forgery）トークンを検証できなかったときに発生します。Railsは、セッションハイジャックや不正なフォーム投稿を防ぐために、フォームから送信されるリクエストに対してこのトークンを使用します。
+
+TodosController#updateアクションに対応するフォームで、CSRFトークンが正しく設定されていることを確認してください。form_tagやform_forヘルパーを使用している場合、Railsは自動的にCSRFトークンをフォームに追加します。しかし、直接HTMLを使用してフォームを作成している場合、手動でトークンを追加する必要があります。
+
+以下のように、form_tag内にauthenticity_token: form_authenticity_tokenを追加してみてください。-->

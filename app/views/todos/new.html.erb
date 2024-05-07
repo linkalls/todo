@@ -1,7 +1,8 @@
 <h1>タイトルを入力</h1> 
-<%= form_tag("/todos/create", data: { turbo_action: 'replace', turbo_frame: 'id' }) do %>
+<%= form_tag("/todos/create") do %>
   <input name="title">
   <p>本文を入力</p>
   <textarea name="content"></textarea>
   <input type="submit" value="登録">
-<% end  %>
+  
+<% end %>
