@@ -4,6 +4,11 @@
 rufo app/ 
 ```
 
+
+```
+ rails s -b 0.0.0.0
+ ```
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
