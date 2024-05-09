@@ -4,13 +4,11 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Task.new(title: params[:title], content: params[:content])
-    if @todo.save
-      flash[:notice] = "投稿に成功しました"
-      redirect_to("/")
+    @task = Task.new(title: params[:title], content: params[:content])
+    if @task.save
+      redirect_to "/", notice: "投稿に成功しました"
     else
-      flash[:notice] = "エラーが発生しました"
-      render("/todos/new")
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -26,6 +24,7 @@ class TodosController < ApplicationController
   end
 
   def new
+    @task = Task.new
   end
 
   def edit
@@ -40,8 +39,7 @@ class TodosController < ApplicationController
       flash[:notice] = "更新に成功しました"
       redirect_to("/")
     else
-      flash[:notice] = "エラーが発生しました"
-      redirect_to("/")
+  render 'todos/edit', status: :unprocessable_entity
     end
   end
 end
