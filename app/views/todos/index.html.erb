@@ -5,6 +5,6 @@
     <h1 class="task-title"><%= task.title %></h1>
     <p class="task-content"><%= task.content %></p>
     <%= link_to("編集", "/#{task.id}/edit") %>
-    <%= button_to("削除", "/#{task.id}", method: :delete) %>
+    <%= link_to("削除", "/#{task.id}", data: {turbo_method: :delete, turbo_confirm: '本当に削除しますか?'}) %>
   </div>
 <% end %>

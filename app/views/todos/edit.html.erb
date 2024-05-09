@@ -10,7 +10,7 @@
     <textarea style="width: 300px; height: 200px;" name="content"><%= @task.content %></textarea>
           <input type="submit" value="変更完了">
     <% end  %>
-    <%= button_to("削除", "/#{@task.id}", method: :delete) %>
+    <%= link_to("削除", "/#{@task.id}", data: {turbo_method: :delete, turbo_confirm: '本当に削除しますか?'}) %>
 </div>
 
 
